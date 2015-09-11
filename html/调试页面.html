@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="../css/reset.css" />
 
     <script type="text/javascript" src="../JS/jquery-1.4.2.js"></script>
+    <script type="text/javascript" src="../formvalidator/formValidator-4.1.1.js"></script>
+
     <script type="text/javascript">
 $(function(){   
-    $('.tabPanel ul li').click(function(){
-        $(this).addClass('hit').siblings().removeClass('hit');
-        $('.panes>div:eq('+$(this).index()+')').show().siblings().hide();   
-    })
+    
 })
 </script>
 </head>
@@ -80,7 +79,7 @@ $(function(){
 
                 </div>
 
-                <div class="panelil" style="display: none;">
+                <div class="panelil" style="display: none;" id="panel2">
                     <div class="public19">
                         <div class="tc_forem_bdxzx">
                             <div class="left tc_forem_bd_f01">企业类型：</div>
@@ -104,8 +103,9 @@ $(function(){
                         <span class="registered_lil5 left"> <b>*</b>
                             组织机构代码证号
                         </span>
-                        <div class="registered_lil6 left">
-                            <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" value="" onfocus="if(this.value=='') this.value='';this.style.color='#333'" onblur="if(this.value=='') {this.value='';this.style.color='#999999'}"> <i class="registered_lil7"></i>
+                        <form id="form1">
+                        <div class="left">
+                            <input type="text" id="loginName" name="loginName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" > <i class="registered_lil7"></i>
                         </div>
                     </div>
                     <div class="registered_lil4">
@@ -239,10 +239,50 @@ $(function(){
                     <div class="registered_li23">
                         <a href="###">立即审核</a>
                     </div>
+                </form>
                 </div>
             </div>
         </div>
     </div>
     <div style="text-align:center;margin:50px 0; font:normal 14px/24px &#39;MicroSoft YaHei&#39;;"></div>
+    <script>
+    $(document).ready(function($) {
+
+        $('.tabPanel ul li').click(function(){
+            $(this).addClass('hit').siblings().removeClass('hit');
+            $('.panes>div:eq('+$(this).index()+')').show().siblings().hide();   
+            if($("#panel2").css('display') === 'block') {
+                $.formValidator.initConfig({
+                    formID:"form1",
+                    theme:'SolidBox',
+                    mode:'AutoTip',
+                    onError:function(msg){
+                        alert(msg)
+                    },
+                    inIframe:true
+                });
+                
+                $("#loginName").formValidator({
+                    onShow:"请输入用户名,只有输入\"maodong\"才是对的",
+                    onFocus:"用户名至少6个字符,最多10个字符",
+                    onCorrect:"该用户名可以注册"
+                }).inputValidator({
+                    min:6,
+                    max:10,
+                    onError:"你输入的用户名非法,请确认"
+                }).regexValidator({
+                    regExp:"username",
+                    dataType:"enum",
+                    onError:"用户名格式不正确"
+                });
+            } else {
+                $("#loginName").unFormValidator(true);
+            }
+         });
+        
+        
+
+    });
+    </script>
 </body>
 </html>
