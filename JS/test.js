@@ -49,13 +49,18 @@
                     });
         },
         bindValidate3: function() {
-            
+
         },
         unbindValidate: function() {
             $("#loginName1").unFormValidator(true);
             $("#loginName").unFormValidator(true);
         },
 
+        clearForm: function() {
+
+            $("#form1")[0].reset();
+            $("#form2")[0].reset();
+        },
 
     };
 })(jQuery);
@@ -66,6 +71,7 @@ $(document).ready(function($) {
             $(this).addClass('hit').siblings().removeClass('hit');
             $('.panes>div:eq('+$(this).index()+')').show().siblings().hide();  
             test.unbindValidate();
+            test.clearForm();
             if($(this).attr('id') === 'li2') {
                 test.bindValidate1();
             } else {
@@ -79,6 +85,7 @@ $(document).ready(function($) {
 
         $("input[name='enterpriseType']").click(function() {
             test.unbindValidate();
+            test.clearForm();
             if($(this).val() === 'mainType') {               
                 $("#panel1-2").hide();
                 $("#panel1-1").show();

@@ -9,7 +9,9 @@
 
     <script type="text/javascript" src="../JS/jquery-1.4.2.js"></script>
     <script type="text/javascript" src="../formvalidator/formValidator-4.1.1.js"></script>
+    <script src="../formvalidator/formValidatorRegex.js" type="text/javascript"></script>
 
+    <script type="text/javascript" src="../JS/signup.js"></script>
     <script type="text/javascript" src="../JS/test.js"></script>
 </head>
 
@@ -78,25 +80,26 @@
                                 <div class="left tc_forem_bd_f01">企业类型：</div>
                                 <div class="left public_tc_forem_bd_f02">
                                     <p class="tc_formbdli left" style="margin-left:20px;" >
-                                        <input name="" type="checkbox" value="" />
+                                        <input name="enterpriseType" type="radio" value="" />
                                     </p>
                                     <p class="tc_formbdli_vsp left">金融机构</p>
                                 </div>
 
                                 <div class="left public_tc_forem_bd_f02">
                                     <p class="tc_formbdli left" style="margin-left:20px;">
-                                        <input name="" type="checkbox" value="" />
+                                        <input name="enterpriseType" type="radio" value="" />
                                     </p>
                                     <p class="tc_formbdli_vsp left">征信同业</p>
                                 </div>
 
                             </div>
                         </div>
+                         <form id="form2">
                         <div class="registered_lil4">
                             <span class="registered_lil5 left"> <b>*</b>
                                 组织机构代码证号
                             </span>
-                            <form id="form2">
+                           
                                 <div class="left">
                                     <input type="text" id="loginName" name="loginName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" > <i class="registered_lil7"></i>
                                 </div>
@@ -168,8 +171,9 @@
                                 <div class="registered_li21 left">看不清楚？换一张</div>
                             </div>
                             <div class="registered_li23">
-                                <a href="###">立即审核</a>
+                                <a href="javascript:;" onclick="signup.valideForm1();">立即审核</a>
                             </div>
+                        </form>
                         </div>
                     </div>
 
@@ -193,12 +197,13 @@
 
                             </div>
                         </div>
+                         <form id="form1">
                         <div class="registered_lil4">
                             <span class="registered_lil5 left">
                                 <b>*</b>
                                 组织机构代码证号
                             </span>
-                            <form id="form1">
+                           
                                 <div class="left">
                                     <input type="text" id="loginName1" name="loginName1" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" >
                                     <i class="registered_lil7"></i>
@@ -273,8 +278,9 @@
                                 <div class="registered_li21 left">看不清楚？换一张</div>
                             </div>
                             <div class="registered_li23">
-                                <a href="###">立即审核</a>
+                                <a href="javascript:;" onclick="signup.valideForm2();">立即审核</a>
                             </div>
+                        </form>
                         </div>
 
                         <!--社会公众-->
