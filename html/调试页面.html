@@ -10,11 +10,7 @@
     <script type="text/javascript" src="../JS/jquery-1.4.2.js"></script>
     <script type="text/javascript" src="../formvalidator/formValidator-4.1.1.js"></script>
 
-    <script type="text/javascript">
-$(function(){   
-    
-})
-</script>
+    <script type="text/javascript" src="../JS/test.js"></script>
 </head>
 
 <body>
@@ -27,33 +23,33 @@ $(function(){
     <div class="widthll">
         <div class="tabPanel">
             <ul>
-                <li class="hit">企业用户</li>
-                <li class="">金融机构|征信同业</li>
-                <li class="">社会公众</li>
+                <li class="hit" id="li1">企业用户</li>
+                <li class="" id="li2">金融机构|征信同业</li>
+                <li class="" id="li3">社会公众</li>
             </ul>
             <div class="panes">
-                <div class="panelil" style="display: block;">
+                <div class="panelil" style="display: block;" id="panel1">
                     <div class="registered_lil3"></div>
                     <div class="public9">
                         <div class="tc_forem_bdxzx">
                             <div class="left tc_forem_bd_f01">企业类型：</div>
                             <div class="left public_tc_forem_bd_f02">
                                 <p class="tc_formbdli left" style="margin-left:20px;" >
-                                    <input name="" type="radio" value=""  />
+                                    <input name="enterpriseType" type="radio" value="mainType"  checked/>
                                 </p>
                                 <p class="tc_formbdli_vsp left">防伪税控用户</p>
                             </div>
 
                             <div class="left public_tc_forem_bd_f02">
                                 <p class="tc_formbdli left" style="margin-left:20px;">
-                                    <input name="" type="radio" value=""  />
+                                    <input name="enterpriseType" type="radio" value="otherType"  />
                                 </p>
                                 <p class="tc_formbdli_vsp left">其他用户</p>
                             </div>
 
                         </div>
                     </div>
-                    <div class="public10">
+                    <div class="public10" id="panel1-1">
                         <div class="public11">一键注册：下载安装爱信诺征信客户端</div>
                         <div class="public12">
                             <div class="public13 left">
@@ -76,213 +72,277 @@ $(function(){
                     <div class="registered_li23">
                         <a href="###">立即下载</a>
                     </div>
+                    <div class="panelil" style="display: none;" id="panel1-2">
+                        <div class="public19">
+                            <div class="tc_forem_bdxzx">
+                                <div class="left tc_forem_bd_f01">企业类型：</div>
+                                <div class="left public_tc_forem_bd_f02">
+                                    <p class="tc_formbdli left" style="margin-left:20px;" >
+                                        <input name="" type="checkbox" value="" />
+                                    </p>
+                                    <p class="tc_formbdli_vsp left">金融机构</p>
+                                </div>
 
-                </div>
+                                <div class="left public_tc_forem_bd_f02">
+                                    <p class="tc_formbdli left" style="margin-left:20px;">
+                                        <input name="" type="checkbox" value="" />
+                                    </p>
+                                    <p class="tc_formbdli_vsp left">征信同业</p>
+                                </div>
 
-                <div class="panelil" style="display: none;" id="panel2">
-                    <div class="public19">
-                        <div class="tc_forem_bdxzx">
-                            <div class="left tc_forem_bd_f01">企业类型：</div>
-                            <div class="left public_tc_forem_bd_f02">
-                                <p class="tc_formbdli left" style="margin-left:20px;" >
-                                    <input name="" type="checkbox" value="" />
-                                </p>
-                                <p class="tc_formbdli_vsp left">金融机构</p>
+                            </div>
+                        </div>
+                        <div class="registered_lil4">
+                            <span class="registered_lil5 left"> <b>*</b>
+                                组织机构代码证号
+                            </span>
+                            <form id="form2">
+                                <div class="left">
+                                    <input type="text" id="loginName" name="loginName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" > <i class="registered_lil7"></i>
+                                </div>
+                            </div>
+                            <div class="registered_lil4">
+                                <span class="registered_lil5 left"> <b>*</b>
+                                    企业名称
+                                </span>
+                                <div class="registered_lil6 left">
+                                    <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" > <i class="registered_lil7"></i>
+                                </div>
+                                <div class="registered_lil8 left">4-20位字符，支持字母、数字及“-”、“-”组合</div>
+                            </div>
+                            <div class="registered_lil4">
+                                <span class="registered_lil5 left">
+                                    <b>*</b>
+                                    联系电话
+                                </span>
+                                <div class="registered_lil6 left">
+                                    <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" >
+                                    <i class="registered_lil7"></i>
+                                </div>
+                                <div class="registered_lil8 left">4-20位字符，支持字母、数字及“-”、“-”组合</div>
+                            </div>
+                            <div class="registered_lil4">
+                                <span class="registered_lil5 left">
+                                    <b>*</b>
+                                    联系邮箱
+                                </span>
+                                <div class="registered_lil6 left">
+                                    <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" >
+                                    <i class="registered_lil7"></i>
+                                </div>
+                                <div class="registered_lil8 left">4-20位字符，支持字母、数字及“-”、“-”组合</div>
+                            </div>
+                            <div class="registered_lil4">
+                                <span class="registered_lil5 left">
+                                    <b>*</b>
+                                    密&nbsp;码
+                                </span>
+                                <div class="registered_lil6 left">
+                                    <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" >
+                                    <i class="registered_lil7"></i>
+                                </div>
+                                <div class="registered_lil8 left">4-20位字符，支持字母、数字及“-”、“-”组合</div>
+                            </div>
+                            <div class="registered_lil4">
+                                <span class="registered_lil5 left">
+                                    <b>*</b>
+                                    确认密码
+                                </span>
+                                <div class="registered_lil6 left">
+                                    <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" >
+                                    <i class="registered_lil7"></i>
+                                </div>
+                                <div class="registered_lil8 left">4-20位字符，支持字母、数字及“-”、“-”组合</div>
                             </div>
 
-                            <div class="left public_tc_forem_bd_f02">
-                                <p class="tc_formbdli left" style="margin-left:20px;">
-                                    <input name="" type="checkbox" value="" />
-                                </p>
-                                <p class="tc_formbdli_vsp left">征信同业</p>
+                            <div class="registered_lil4">
+                                <span class="registered_lil5 left">
+                                    <b>*</b>
+                                    验证码
+                                </span>
+                                <div class="registered_lil9 left">
+                                    <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" ></div>
+                                <div class="registered_li20 left">
+                                    <img src="../images/lod4.png" />
+                                </div>
+                                <div class="registered_li21 left">看不清楚？换一张</div>
+                            </div>
+                            <div class="registered_li23">
+                                <a href="###">立即审核</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panelil" style="display: none;" id="panel2">
+                        <div class="public19">
+                            <div class="tc_forem_bdxzx">
+                                <div class="left tc_forem_bd_f01">企业类型：</div>
+                                <div class="left public_tc_forem_bd_f02">
+                                    <p class="tc_formbdli left" style="margin-left:20px;" >
+                                        <input name="" type="checkbox" value="" />
+                                    </p>
+                                    <p class="tc_formbdli_vsp left">金融机构</p>
+                                </div>
+
+                                <div class="left public_tc_forem_bd_f02">
+                                    <p class="tc_formbdli left" style="margin-left:20px;">
+                                        <input name="" type="checkbox" value="" />
+                                    </p>
+                                    <p class="tc_formbdli_vsp left">征信同业</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="registered_lil4">
+                            <span class="registered_lil5 left">
+                                <b>*</b>
+                                组织机构代码证号
+                            </span>
+                            <form id="form1">
+                                <div class="left">
+                                    <input type="text" id="loginName1" name="loginName1" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" >
+                                    <i class="registered_lil7"></i>
+                                </div>
+                            </div>
+                            <div class="registered_lil4">
+                                <span class="registered_lil5 left">
+                                    <b>*</b>
+                                    企业名称
+                                </span>
+                                <div class="registered_lil6 left">
+                                    <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" >
+                                    <i class="registered_lil7"></i>
+                                </div>
+                                <div class="registered_lil8 left">4-20位字符，支持字母、数字及“-”、“-”组合</div>
+                            </div>
+                            <div class="registered_lil4">
+                                <span class="registered_lil5 left">
+                                    <b>*</b>
+                                    联系电话
+                                </span>
+                                <div class="registered_lil6 left">
+                                    <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" >
+                                    <i class="registered_lil7"></i>
+                                </div>
+                                <div class="registered_lil8 left">4-20位字符，支持字母、数字及“-”、“-”组合</div>
+                            </div>
+                            <div class="registered_lil4">
+                                <span class="registered_lil5 left">
+                                    <b>*</b>
+                                    联系邮箱
+                                </span>
+                                <div class="registered_lil6 left">
+                                    <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" >
+                                    <i class="registered_lil7"></i>
+                                </div>
+                                <div class="registered_lil8 left">4-20位字符，支持字母、数字及“-”、“-”组合</div>
+                            </div>
+                            <div class="registered_lil4">
+                                <span class="registered_lil5 left">
+                                    <b>*</b>
+                                    密&nbsp;码
+                                </span>
+                                <div class="registered_lil6 left">
+                                    <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" >
+                                    <i class="registered_lil7"></i>
+                                </div>
+                                <div class="registered_lil8 left">4-20位字符，支持字母、数字及“-”、“-”组合</div>
+                            </div>
+                            <div class="registered_lil4">
+                                <span class="registered_lil5 left">
+                                    <b>*</b>
+                                    确认密码
+                                </span>
+                                <div class="registered_lil6 left">
+                                    <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" >
+                                    <i class="registered_lil7"></i>
+                                </div>
+                                <div class="registered_lil8 left">4-20位字符，支持字母、数字及“-”、“-”组合</div>
                             </div>
 
+                            <div class="registered_lil4">
+                                <span class="registered_lil5 left">
+                                    <b>*</b>
+                                    验证码
+                                </span>
+                                <div class="registered_lil9 left">
+                                    <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" ></div>
+                                <div class="registered_li20 left">
+                                    <img src="../images/lod4.png" />
+                                </div>
+                                <div class="registered_li21 left">看不清楚？换一张</div>
+                            </div>
+                            <div class="registered_li23">
+                                <a href="###">立即审核</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="registered_lil4">
-                        <span class="registered_lil5 left"> <b>*</b>
-                            组织机构代码证号
-                        </span>
-                        <form id="form1">
-                        <div class="left">
-                            <input type="text" id="loginName" name="loginName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" > <i class="registered_lil7"></i>
-                        </div>
-                    </div>
-                    <div class="registered_lil4">
-                        <span class="registered_lil5 left"> <b>*</b>
-                            企业名称
-                        </span>
-                        <div class="registered_lil6 left">
-                            <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" value="" onfocus="if(this.value=='') this.value='';this.style.color='#333'" onblur="if(this.value=='') {this.value='';this.style.color='#999999'}"> <i class="registered_lil7"></i>
-                        </div>
-                        <div class="registered_lil8 left">4-20位字符，支持字母、数字及“-”、“-”组合</div>
-                    </div>
-                    <div class="registered_lil4">
-                        <span class="registered_lil5 left">
-                            <b>*</b>
-                            联系电话
-                        </span>
-                        <div class="registered_lil6 left">
-                            <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" value="" onfocus="if(this.value=='') this.value='';this.style.color='#333'" onblur="if(this.value=='') {this.value='';this.style.color='#999999'}">
-                            <i class="registered_lil7"></i>
-                        </div>
-                        <div class="registered_lil8 left">4-20位字符，支持字母、数字及“-”、“-”组合</div>
-                    </div>
-                    <div class="registered_lil4">
-                        <span class="registered_lil5 left">
-                            <b>*</b>
-                            联系邮箱
-                        </span>
-                        <div class="registered_lil6 left">
-                            <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" value="" onfocus="if(this.value=='') this.value='';this.style.color='#333'" onblur="if(this.value=='') {this.value='';this.style.color='#999999'}">
-                            <i class="registered_lil7"></i>
-                        </div>
-                        <div class="registered_lil8 left">4-20位字符，支持字母、数字及“-”、“-”组合</div>
-                    </div>
-                    <div class="registered_lil4">
-                        <span class="registered_lil5 left">
-                            <b>*</b>
-                            密&nbsp;码
-                        </span>
-                        <div class="registered_lil6 left">
-                            <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" value="" onfocus="if(this.value=='') this.value='';this.style.color='#333'" onblur="if(this.value=='') {this.value='';this.style.color='#999999'}">
-                            <i class="registered_lil7"></i>
-                        </div>
-                        <div class="registered_lil8 left">4-20位字符，支持字母、数字及“-”、“-”组合</div>
-                    </div>
-                    <div class="registered_lil4">
-                        <span class="registered_lil5 left">
-                            <b>*</b>
-                            确认密码
-                        </span>
-                        <div class="registered_lil6 left">
-                            <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" value="" onfocus="if(this.value=='') this.value='';this.style.color='#333'" onblur="if(this.value=='') {this.value='';this.style.color='#999999'}">
-                            <i class="registered_lil7"></i>
-                        </div>
-                        <div class="registered_lil8 left">4-20位字符，支持字母、数字及“-”、“-”组合</div>
-                    </div>
 
-                    <div class="registered_lil4">
-                        <span class="registered_lil5 left">
-                            <b>*</b>
-                            验证码
-                        </span>
-                        <div class="registered_lil9 left">
-                            <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" value="" onfocus="if(this.value=='') this.value='';this.style.color='#333'" onblur="if(this.value=='') {this.value='';this.style.color='#999999'}"></div>
-                        <div class="registered_li20 left">
-                            <img src="../images/lod4.png" />
-                        </div>
-                        <div class="registered_li21 left">看不清楚？换一张</div>
-                    </div>
-                    <div class="registered_li23">
-                        <a href="###">立即审核</a>
-                    </div>
-                </div>
+                        <!--社会公众-->
+                        <div class="panelil" style="display: none;">
+                            <div class="registered_lil3">
+                                已有账号，
+                                <a href="###">马上登陆</a>
+                            </div>
 
-                <!--社会公众-->
-                <div class="panelil" style="display: none;">
-                    <div class="registered_lil3">
-                        已有账号，
-                        <a href="###">马上登陆</a>
+                            <div class="registered_lil4">
+                                <span class="registered_lil5 left">
+                                    <b>*</b>
+                                    手&nbsp;机
+                                </span>
+                                <div class="registered_lil6 left">
+                                    <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" >
+                                    <i class="registered_lil7"></i>
+                                </div>
+                                <div class="registered_lil8 left">4-20位字符，支持字母、数字及“-”、“-”组合</div>
+                            </div>
+                            <div class="registered_lil4">
+                                <span class="registered_lil5 left">
+                                    <b>*</b>
+                                    密&nbsp;码
+                                </span>
+                                <div class="registered_lil6 left">
+                                    <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" >
+                                    <i class="registered_lil7_1"></i>
+                                </div>
+                                <div class="registered_lil8 left">4-20位字符，支持字母、数字及“-”、“-”组合</div>
+                            </div>
+                            <div class="registered_lil4">
+                                <span class="registered_lil5 left">
+                                    <b>*</b>
+                                    确认密码
+                                </span>
+                                <div class="registered_lil6 left">
+                                    <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" >
+                                    <i class="registered_lil7_2"></i>
+                                </div>
+                                <div class="registered_li24 left">密码输入不一致，请重新输入</div>
+                            </div>
+                            <div class="registered_lil4">
+                                <span class="registered_lil5 left">
+                                    <b>*</b>
+                                    验证码
+                                </span>
+                                <div class="registered_lil9 left">
+                                    <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" ></div>
+                                <div class="registered_li20 left">
+                                    <img src="../images/lod4.png" />
+                                </div>
+                                <div class="registered_li21 left">看不清楚？换一张</div>
+                            </div>
+                            <div class="registered_li22">
+                                <input name="" type="checkbox" value="" />
+                                &nbsp;&nbsp;接受
+                                <a href="###">《用户协议注册》</a>
+                            </div>
+                            <div class="registered_li23">
+                                <a href="###">立即审核</a>
+                            </div>
+                        </form>
                     </div>
-
-                    <div class="registered_lil4">
-                        <span class="registered_lil5 left">
-                            <b>*</b>
-                            手&nbsp;机
-                        </span>
-                        <div class="registered_lil6 left">
-                            <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" value="" onfocus="if(this.value=='') this.value='';this.style.color='#333'" onblur="if(this.value=='') {this.value='';this.style.color='#999999'}">
-                            <i class="registered_lil7"></i>
-                        </div>
-                        <div class="registered_lil8 left">4-20位字符，支持字母、数字及“-”、“-”组合</div>
-                    </div>
-                    <div class="registered_lil4">
-                        <span class="registered_lil5 left">
-                            <b>*</b>
-                            密&nbsp;码
-                        </span>
-                        <div class="registered_lil6 left">
-                            <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" value="" onfocus="if(this.value=='') this.value='';this.style.color='#333'" onblur="if(this.value=='') {this.value='';this.style.color='#999999'}">
-                            <i class="registered_lil7_1"></i>
-                        </div>
-                        <div class="registered_lil8 left">4-20位字符，支持字母、数字及“-”、“-”组合</div>
-                    </div>
-                    <div class="registered_lil4">
-                        <span class="registered_lil5 left">
-                            <b>*</b>
-                            确认密码
-                        </span>
-                        <div class="registered_lil6 left">
-                            <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" value="" onfocus="if(this.value=='') this.value='';this.style.color='#333'" onblur="if(this.value=='') {this.value='';this.style.color='#999999'}">
-                            <i class="registered_lil7_2"></i>
-                        </div>
-                        <div class="registered_li24 left">密码输入不一致，请重新输入</div>
-                    </div>
-                    <div class="registered_lil4">
-                        <span class="registered_lil5 left">
-                            <b>*</b>
-                            验证码
-                        </span>
-                        <div class="registered_lil9 left">
-                            <input type="text" id="regName" name="regName" maxlength="20" class="text" tabindex="1" autocomplete="off" onpaste="return false;" value="" onfocus="if(this.value=='') this.value='';this.style.color='#333'" onblur="if(this.value=='') {this.value='';this.style.color='#999999'}"></div>
-                        <div class="registered_li20 left">
-                            <img src="../images/lod4.png" />
-                        </div>
-                        <div class="registered_li21 left">看不清楚？换一张</div>
-                    </div>
-                    <div class="registered_li22">
-                        <input name="" type="checkbox" value="" />
-                        &nbsp;&nbsp;接受
-                        <a href="###">《用户协议注册》</a>
-                    </div>
-                    <div class="registered_li23">
-                        <a href="###">立即审核</a>
-                    </div>
-                </form>
                 </div>
             </div>
         </div>
-    </div>
-    <div style="text-align:center;margin:50px 0; font:normal 14px/24px &#39;MicroSoft YaHei&#39;;"></div>
-    <script>
-    $(document).ready(function($) {
-
-        $('.tabPanel ul li').click(function(){
-            $(this).addClass('hit').siblings().removeClass('hit');
-            $('.panes>div:eq('+$(this).index()+')').show().siblings().hide();   
-            if($("#panel2").css('display') === 'block') {
-                $.formValidator.initConfig({
-                    formID:"form1",
-                    theme:'SolidBox',
-                    mode:'AutoTip',
-                    onError:function(msg){
-                        alert(msg)
-                    },
-                    inIframe:true
-                });
-                
-                $("#loginName").formValidator({
-                    onShow:"请输入用户名,只有输入\"maodong\"才是对的",
-                    onFocus:"用户名至少6个字符,最多10个字符",
-                    onCorrect:"该用户名可以注册"
-                }).inputValidator({
-                    min:6,
-                    max:10,
-                    onError:"你输入的用户名非法,请确认"
-                }).regexValidator({
-                    regExp:"username",
-                    dataType:"enum",
-                    onError:"用户名格式不正确"
-                });
-            } else {
-                $("#loginName").unFormValidator(true);
-            }
-         });
-        
-        
-
-    });
-    </script>
+        <div style="text-align:center;margin:50px 0; font:normal 14px/24px &#39;MicroSoft YaHei&#39;;"></div>
+        <script></script>
 </body>
-</html>
+    </html>
