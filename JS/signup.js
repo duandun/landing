@@ -1,9 +1,10 @@
-(function($){
+(function($) {
 	window.signup = $.fn.signup = {
+
 		valideForm1: function() {
-			if($.formValidator.pageIsValid() && $("#form1").valid()) {
+			if ($("#form1").valid()) {
 				alert("form1验证成功");
-				var roleType = $("#panel1-2 input[name='enterpriseTypeB1']:checked").val();
+				var roleCode = 'ROLE_NO_TAX';
 				$.ajax({
 					url: basePath + "member/insertMember?" + new Date().getTime(),
 					dataType: "json",
@@ -14,12 +15,12 @@
 						mobile: $("#mobile1").val(),
 						email: $("#email1").val(),
 						password: $("#password1").val(),
-						roleType: roleType
+						roleCode: roleCode
 					},
 					success: function(data) {
 						var result = data.result;
-						if(result === 'success') {
-							window.location.replace( basePath + "member/registerSuccess?" + new Date().getTime());
+						if (result === 'success') {
+							window.location.replace(basePath + "member/registerSuccess?" + new Date().getTime());
 						} else {
 							$.jBox.error("注册失败！");
 						}
@@ -31,10 +32,12 @@
 				});
 			}
 		},
+
 		valideForm2: function() {
-			if($.formValidator.pageIsValid() && $("#form2").valid()) {
+			if ($("#form2").valid()) {
+				//if($.formValidator.pageIsValid() && $("#form2").valid()) {
 				alert("form2验证成功");
-				var roleType = $("#panel2 input[name='enterpriseTypeB2']:checked").val();
+				var roleCode = $("#panel2 input[name='enterpriseTypeB2']:checked").val();
 				$.ajax({
 					url: basePath + "member/insertMember?" + new Date().getTime(),
 					dataType: "json",
@@ -45,12 +48,12 @@
 						mobile: $("#mobile2").val(),
 						email: $("#email2").val(),
 						password: $("#password2").val(),
-						roleType: roleType
+						roleCode: roleCode
 					},
 					success: function(data) {
 						var result = data.result;
-						if(result === 'success') {
-							window.location.replace( basePath + "member/registerSuccess?" + new Date().getTime());
+						if (result === 'success') {
+							window.location.replace(basePath + "member/registerSuccess?" + new Date().getTime());
 						} else {
 							$.jBox.error("注册失败！");
 						}
@@ -62,12 +65,14 @@
 				});
 			}
 		},
+		
 		valideForm3: function() {
 			var accept = $("#form3 input[name='accept']").eq(0).attr("checked");
-			if($.formValidator.pageIsValid() && $("#form3").valid() && accept) {
+			if ($("#form3").valid() && accept) {
+				//	if($.formValidator.pageIsValid() && $("#form3").valid() && accept) {
 				alert("form3验证成功");
 
-				var roleType = "ROLE_SOCIAL_PUBLIC";
+				var roleCode = "ROLE_SOCIAL_PUBLIC";
 				$.ajax({
 					url: basePath + "member/insertMember?" + new Date().getTime(),
 					dataType: "json",
@@ -75,12 +80,12 @@
 					data: {
 						mobile: $("#mobile3").val(),
 						password: $("#password3").val(),
-						roleType: roleType
+						roleCode: roleCode
 					},
 					success: function(data) {
 						var result = data.result;
-						if(result === 'success') {
-							window.location.replace( basePath + "member/registerSuccess?" + new Date().getTime());
+						if (result === 'success') {
+							window.location.replace(basePath + "member/registerSuccess?" + new Date().getTime());
 						} else {
 							$.jBox.error("注册失败！");
 						}

@@ -1,15 +1,60 @@
 (function($) {
     window.myvalidate = $.fn.myvalidate = {
         bindValidate1: function() {
+            //            $.formValidator.initConfig({
+            //                formID: "form1",
+            //                theme: 'SolidBox',
+            //                mode: 'AutoTip',
+            //                onError: function(msg) {
+            //                    alert(msg)
+            //                },
+            //                inIframe: true,
+            //                validatorGroup: "1"
+            //       
+            //            });
+
             $.formValidator.initConfig({
                 formID: "form1",
                 theme: 'SolidBox',
                 mode: 'AutoTip',
                 onError: function(msg) {
-                    alert(msg)
+                    //alert(msg)
                 },
                 inIframe: true
             });
+
+            /*$("#loginName1").formValidator({
+                onShow:"请输入邮箱",
+                onFocus:"邮箱至少6个字符,最多100个字符",
+                onCorrect:"恭喜你,你输对了"
+            }).inputValidator({
+                min:6,
+                max:100,
+                empty: {
+                    emptyError:"邮箱不能为空"
+                },
+                
+                onError:"你输入的邮箱长度非法,请确认"
+            }).regexValidator({
+                regExp:"^([\\w-.]+)@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.)|(([\\w-]+.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(]?)$",
+                onError:"你输入的邮箱格式不正确"
+            }).ajaxValidator({
+                dataType : "html",
+                async : true,
+                url : basePath + "member/checkEmail",
+                success : function(data){
+                    if( data.indexOf("此用户名可以注册!") > 0 ) {
+                        return true
+                    };
+                    return data;
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert("服务器没有返回数据，可能服务器忙，请重试"+errorThrown);
+                },
+                onError : "该用户名不可用，请更换用户名",
+                onWait : "正在对用户名进行合法性校验，请稍候..."
+            });*/
+
             $("#loginName1").formValidator({
                 onShow: "请输入用户名",
                 onFocus: "用户名至少6个字符,最多32个字符",
@@ -18,29 +63,25 @@
                 min: 6,
                 max: 32,
                 onError: "你输入的用户名非法,请确认"
-            }).regexValidator({
-                regExp: "username",
-                dataType: "enum",
-                onError: "用户名格式不正确"
             }).ajaxValidator({
-                dataType : "html",
-                async : true,
-                url : basePath + "member/checkLoginName",
-                success : function(data){
-                    if( data.indexOf("此用户名可以注册!") > 0 ) {
+                dataType: "html",
+                async: true,
+                url: basePath + "member/checkLoginName?" + new Date().getTime(),
+                success: function(data) {
+                    if (data.indexOf("此用户名可以注册!") > 0) {
                         return true;
                     };
-                    if(data === 'true') {
+                    if (data === 'true') {
                         return true;
                     } else {
                         return false;
                     }
                 },
-                error: function(jqXHR, textStatus, errorThrown){
-                    alert("服务器没有返回数据，可能服务器忙，请重试"+errorThrown);
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert("服务器没有返回数据，可能服务器忙，请重试" + errorThrown);
                 },
-                onError : "该用户名不可用，请更换用户名",
-                onWait : "正在对用户名进行合法性校验，请稍候..."
+                onError: "该用户名不可用，请更换用户名",
+                onWait: "正在对用户名进行合法性校验，请稍候..."
             });
 
             $("#enterpriseName1").formValidator({
@@ -118,10 +159,11 @@
                 theme: 'SolidBox',
                 mode: 'AutoTip',
                 onError: function(msg) {
-                    alert(msg)
+                    //alert(msg)
                 },
                 inIframe: true
             });
+
             $("#loginName2").formValidator({
                 onShow: "请输入用户名",
                 onFocus: "用户名至少6个字符,最多32个字符",
@@ -130,29 +172,25 @@
                 min: 6,
                 max: 32,
                 onError: "你输入的用户名非法,请确认"
-            }).regexValidator({
-                regExp: "username",
-                dataType: "enum",
-                onError: "用户名格式不正确"
             }).ajaxValidator({
-                dataType : "html",
-                async : true,
-                url : basePath + "member/checkLoginName",
-                success : function(data){
-                    if( data.indexOf("此用户名可以注册!") > 0 ) {
+                dataType: "html",
+                async: true,
+                url: basePath + "member/checkLoginName",
+                success: function(data) {
+                    if (data.indexOf("此用户名可以注册!") > 0) {
                         return true;
                     };
-                    if(data === 'true') {
+                    if (data === 'true') {
                         return true;
                     } else {
                         return false;
                     }
                 },
-                error: function(jqXHR, textStatus, errorThrown){
-                    alert("服务器没有返回数据，可能服务器忙，请重试"+errorThrown);
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert("服务器没有返回数据，可能服务器忙，请重试" + errorThrown);
                 },
-                onError : "该用户名不可用，请更换用户名",
-                onWait : "正在对用户名进行合法性校验，请稍候..."
+                onError: "该用户名不可用，请更换用户名",
+                onWait: "正在对用户名进行合法性校验，请稍候..."
             });
 
             $("#enterpriseName2").formValidator({
@@ -230,7 +268,7 @@
                 theme: 'SolidBox',
                 mode: 'AutoTip',
                 onError: function(msg) {
-                    alert(msg)
+                    //alert(msg)
                 },
                 inIframe: true
             });
@@ -248,21 +286,21 @@
                 dataType: "enum",
                 onError: "你输入的手机号码格式不正确"
             }).ajaxValidator({
-                dataType : "html",
-                async : true,
-                url : basePath + "member/checkMobile",
-                success : function(data){
-                    if(data === 'true') {
+                dataType: "html",
+                async: true,
+                url: basePath + "member/checkMobile",
+                success: function(data) {
+                    if (data === 'true') {
                         return true;
                     } else {
                         return false;
                     }
                 },
-                error: function(jqXHR, textStatus, errorThrown){
-                    alert("服务器没有返回数据，可能服务器忙，请重试"+errorThrown);
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert("服务器没有返回数据，可能服务器忙，请重试" + errorThrown);
                 },
-                onError : "该手机号不可用，请更换手机号",
-                onWait : "正在对手机号码进行合法性校验，请稍候..."
+                onError: "该手机号不可用，请更换手机号",
+                onWait: "正在对手机号码进行合法性校验，请稍候..."
             });
 
             $("#password3").formValidator({
@@ -328,7 +366,7 @@
 })(jQuery);
 
 $(document).ready(function($) {
-
+    //myvalidate.bindValidate1();
     $('.tabPanel ul li').click(function() {
         $(this).addClass('hit').siblings().removeClass('hit');
         $('.panes>div:eq(' + $(this).index() + ')').show().siblings().hide();
@@ -361,15 +399,59 @@ $(document).ready(function($) {
             myvalidate.bindValidate1();
         }
     });
-    
+
     $("#changeImg1").click(function() {
-        $("#verificationCodeImg1").attr("src", basePath+ "util/captcha?timestamp=" + new Date().getTime());
+        $("#verificationCodeImg1").attr("src", basePath + "util/captcha?timestamp=" + new Date().getTime());
     });
 
     $("#changeImg2").click(function() {
-        $("#verificationCodeImg2").attr("src", basePath+ "util/captcha?timestamp=" + new Date().getTime());
+        $("#verificationCodeImg2").attr("src", basePath + "util/captcha?timestamp=" + new Date().getTime());
     });
     $("#changeImg3").click(function() {
-        $("#verificationCodeImg3").attr("src", basePath+ "util/captcha?timestamp=" + new Date().getTime());
+        $("#verificationCodeImg3").attr("src", basePath + "util/captcha?timestamp=" + new Date().getTime());
     });
+
+
+    // 验证码
+    $("#sendVerifyCode").html("发送验证码");
+    $("#sendVerifyCode").next().hide();
+    var count = 10;
+
+    function reSendVerify() {
+        if ($.formValidator.isOneValid("mobile3")) {
+            $.ajax({
+                url: basePath + "member/sendVerifyCode?" + new Date().getTime(),
+                dataType: "json",
+                type: "get",
+                data: {
+                    loginName: $("#mobile3").val()
+                },
+                success: function(data) {
+
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+            var i = setInterval(function() {
+                $("#sendVerifyCode").next().show();
+                $("#sendVerifyCode").html("重新发送(" + count + ")");
+                $("#sendVerifyCode").css('background-color', 'grey');
+                $("#sendVerifyCode").unbind('click', reSendVerify);
+                if (count <= 0) {
+                    clearInterval(i);
+                    $("#sendVerifyCode").bind('click', reSendVerify);
+                    $("#sendVerifyCode").css('background-color', '#3388ff');
+                    $("#sendVerifyCode").html("发送验证码");
+                    count = 10;
+                }
+                count--;
+
+            }, 1000);
+        }
+
+    }
+
+    $("#sendVerifyCode").bind('click', reSendVerify);
+
 });
