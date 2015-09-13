@@ -112,7 +112,7 @@
                             </span>
                            
                                 <div class="left">
-                                    <input type="text" id="loginName1" name="loginName" style="width:220px;" maxlength="32" class="text" tabindex="1" autocomplete="off" onpaste="return false;" value=""> <i class="registered_lil7"></i>
+                                    <input type="text" id="loginName1" name="loginName" disabled="disabled" style="width:220px;" maxlength="32" class="text" tabindex="1" autocomplete="off" onpaste="return false;" value="12346"> <i class="registered_lil7"></i>
                                 </div>
                             </div>
                             <div class="registered_lil4">
@@ -368,6 +368,8 @@
             </div>
         </div>
         <div style="text-align:center;margin:50px 0; font:normal 14px/24px &#39;MicroSoft YaHei&#39;;"></div>
-        <script></script>
+        <script>
+        console.log($("#loginName1").val());
+        </script>
 </body>
 </html>
