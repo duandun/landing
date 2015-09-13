@@ -1,17 +1,18 @@
 .fv_tip{ display:inline-block;}
 .onShow
 {
-    background:url(../images/onShow.gif) no-repeat left center; 
-
+	height:36px; border:1px solid #c1c4cb; background:#f7f7f7; font-size:12px; line-height:37px;color:#666; padding-left:10px;
+	vertical-align:middle;display:inline-block;padding-right:20px;margin-top:5px;margin-left:10px;
 }
 .onFocus
 {
     background:#E9F0FF url(../images/onFocus.gif) no-repeat left center; 
 	border:#CDE0FA solid 1px;
+	
 		/* outline radius for mozilla/firefox only */
 	-moz-box-shadow:0 0 4px #CDE0FA;
 	-webkit-box-shadow:0 0 4px #CDE0FA;
-}
+}  
 .onError
 {
     background:#FFF2E9 url(../images/onError.gif) no-repeat left center;
@@ -36,29 +37,31 @@
 	-moz-box-shadow:0 0 4px #CDE0FA;
 	-webkit-box-shadow:0 0 4px #CDE0FA;
 } 
-.onShow,.onFocus,.onError,.onCorrect,.onLoad
+.onFocus,.onError,.onCorrect,.onLoad
 {
-	padding:4px 25px;
+	padding:10px 25px;
 	font-size: 12px;
 	vertical-align:middle;
 	display:inline-block;
-	margin-left:8px;
-
+	margin-left:10px;
+	margin-top:5px;
 }
 
 .input_error {
-	border:#C1C1C1 1px solid;font-size:14px;padding:4px 5px 4px;background-color:#FBFBFB;background-position:0 -72px;color:#444;
-	background-color:#FBE2E2;background-position:0 -144px;border-color:#D28C8C;color:#A63B3B
+	border:#C1C1C1 1px solid;font-size:14px;background-color:#FBFBFB;background-position:0 -72px;color:#444;
+	background-position:0 -144px;border-color:#D28C8C;color:#A63B3B;padding-top:10px;padding-bottom:10px;padding-right:5px;padding-left:8px;
 }
 
 .input_focus {
-	border:#C1C1C1 1px solid;font-size:14px;padding:4px 5px 4px;background-color:#FBFBFB;background-position:0 -72px;color:#444;
-    background-color:#FFC;background-position:0 -108px;border-color:#C6C69E
+	border:#C1C1C1 1px solid;font-size:14px;background-color:#FBFBFB;background-position:0 -72px;color:#444;
+    background-color:#FFC;background-position:0 -108px;border-color:#3388ff;padding-top:10px;padding-bottom:10px;padding-right:5px;padding-left:8px;
 }
 
 .input_show {
-    border:#C1C1C1 1px solid;font-size:14px;padding:4px 5px 4px;background-color:#FBFBFB;background-position:0 -72px;color:#444
+    border:#C1C1C1 1px solid;font-size:14px;background-color:#FBFBFB;background-position:0 -72px;color:#444;
+    padding-top:10px;padding-bottom:10px;padding-right:5px;padding-left:8px;
 }
 .input_correct {
-    border:#C1C1C1 1px solid;font-size:14px;padding:4px 5px 4px;background-color:#FBFBFB;background-position:0 -72px;color:#444
+    border:#C1C1C1 1px solid;font-size:14px;background-color:#FBFBFB;background-position:0 -72px;color:#444;
+    padding-top:10px;padding-bottom:10px;padding-right:5px;padding-left:8px;
 }
